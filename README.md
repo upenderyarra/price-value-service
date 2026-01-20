@@ -1,4 +1,4 @@
-# Last Value Price Service  
+#  Price Value Service  
 Spring Boot | In-Memory | Batch Price Processing
 
 ## Overview
@@ -58,11 +58,4 @@ http/price-service.http
 Important:
 Execute the HTTP file using **Run All** to preserve request execution context and variable sharing.
 
-## Possible Improvements
-- Database persistence
-- Validation and error handling
-- Monitoring and metrics
-- Kafka integration
 
-## Summary
-This solution meets all functional and technical requirements while maintaining production-quality standards.
