@@ -1,0 +1,40 @@
+### 1. Start batch
+POST http://localhost:8080/prices/batch/start
+
+> {%
+    client.global.set("batchId", response.body.batchId);
+%}
+
+###
+
+### 2. Upload prices
+
+POST http://localhost:8080/prices/batch/{{batchId}}/upload
+Content-Type: application/json
+
+[
+  {
+    "id": "AAPL",
+    "asOf": "2024-01-01T10:00:00Z",
+    "payload": {
+      "price": 100
+    }
+  },
+  {
+    "id": "AAPL",
+    "asOf": "2024-01-01T11:00:00Z",
+    "payload": {
+      "price": 105
+    }
+  }
+]
+
+###
+
+### 3. Complete batch
+POST http://localhost:8080/prices/batch/{{batchId}}/complete
+
+###
+
+### 4. Get last price
+GET http://localhost:8080/prices/AAPL
